@@ -7,11 +7,9 @@ import { UserNotFound } from "../exceptions";
  */
 export const getUserById = async (id: string) => {
   const user: any = await User.findOne({ where: { id } });
-  if (user) {
-    return {
-      id: user.id,
-      name: user.phone,
-    };
-  }
-  throw new UserNotFound("User not found.");
+  if (!user) throw new UserNotFound("User not found.");
+  return {
+    id: user.id,
+    name: user.phone,
+  };
 };

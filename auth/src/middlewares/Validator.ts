@@ -1,6 +1,6 @@
 //* Include joi to check error type
 import Joi from "joi";
-import { Request, Response, RequestHandler, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
 /**
  *

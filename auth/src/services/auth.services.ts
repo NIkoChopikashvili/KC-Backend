@@ -133,7 +133,7 @@ export const sendSMS = async (message: string, numbers: string | string[]) => {
 /**
  * Verify OTP
  * @param {string} otpId - OTP id.
- * @param {string} otpId - OTP Typed by user.
+ * @param {string} otp - OTP Typed by user.
  */
 export const verifyOtp = async (otpId: string, otp: number) => {
   const userOtp: any = await Otp.findByPk(otpId);
