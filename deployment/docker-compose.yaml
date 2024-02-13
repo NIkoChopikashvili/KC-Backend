@@ -9,7 +9,7 @@ services:
     env_file:
       - db/.env
     networks:
-      - n1
+      - nikochopikashvili
 
   gateway:
     container_name: gateway
@@ -19,7 +19,7 @@ services:
     ports:
       - 80:8080
     networks:
-      - n1
+      - nikochopikashvili
 
   service-auth:
     container_name: service-auth
@@ -29,8 +29,8 @@ services:
     env_file:
       - service/auth/.env
     networks:
-      - n1
+      - nikochopikashvili
 
 networks:
-  n1:
+  nikochopikashvili:
     external: true
