@@ -16,8 +16,8 @@ services:
     build:
       context: ./gateway/src
     restart: always
-    ports:
-      - 80:8080
+    # ports:
+    #   - 80:8080
     networks:
       - nikochopikashvili
 
@@ -26,6 +26,8 @@ services:
     build:
       context: ../auth
     restart: always
+    ports:
+      - 80:3000
     env_file:
       - service/auth/.env
     networks:
