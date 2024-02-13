@@ -1,11 +1,10 @@
 import supertest from "supertest";
-import { initializeDatabase } from "../src/db";
-import { User } from "../src/db/models";
-import { registerUser, verifyOtp } from "../src/services";
+import { initializeDatabase } from "../db";
+import { registerUser, verifyOtp } from "../services";
 import { sampleUser } from "./sampleData";
 import { describe, beforeAll, test, expect } from "@jest/globals";
 
-import { app } from "../src/index";
+import { app } from "../index";
 
 describe("auth Endpoints", () => {
   beforeAll(async () => {

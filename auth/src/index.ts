@@ -4,7 +4,7 @@ import { globalErrorHandler } from "./middlewares/globalErrorHandler";
 import bodyParser from "body-parser";
 import { initializeDatabase } from "./db";
 import { authRoute } from "./routes/auth.routes";
-import helmet from "helmet";
+// import helmet from "helmet";
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
-app.use(helmet());
+// app.use(helmet());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
