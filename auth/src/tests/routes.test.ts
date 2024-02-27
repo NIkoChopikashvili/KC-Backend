@@ -18,7 +18,6 @@ describe("auth Endpoints", () => {
       const verifyData = await verifyOtp(otpId, otp);
       token = verifyData.token;
     });
-
     test("check token", async () => {
       const res = await supertest(app)
         .get("/check-token")
@@ -26,6 +25,7 @@ describe("auth Endpoints", () => {
 
       expect(res.statusCode).toEqual(200);
     });
+
 
     test("should give 401 if token is wrong while checking token", async () => {
       const res = await supertest(app)

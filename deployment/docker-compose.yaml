@@ -31,6 +31,16 @@ services:
     networks:
       - nikochopikashvili
 
+  service-posts:
+    container_name: service-posts
+    build:
+      context: ../posts
+    restart: always
+    env_file:
+      - service/posts/.env
+    networks:
+      - nikochopikashvili
+
 networks:
   nikochopikashvili:
     external: true

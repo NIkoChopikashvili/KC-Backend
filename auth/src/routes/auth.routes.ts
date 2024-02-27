@@ -10,7 +10,7 @@ const authRoute = express.Router();
 authRoute.get(
   "/check-token",
   authHandler,
-  function (req: Request, res: Response) {
+  function(req: Request, res: Response) {
     res.setHeader("User-Id", req.user.id);
     res.sendStatus(200);
   }
@@ -19,7 +19,7 @@ authRoute.get(
 authRoute.get(
   "/me",
   authHandler,
-  function (req: Request, res: Response, next: NextFunction) {
+  function(req: Request, res: Response, next: NextFunction) {
     getUserById(req.user.id)
       .then((user) => res.json({ result: resultCodes.SUCCESS, user }))
       .catch(next);

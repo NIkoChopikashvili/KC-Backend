@@ -1,0 +1,1 @@
+export { PostNotFound } from "./PostNotFoundException";
